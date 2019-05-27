@@ -9,9 +9,12 @@ import * as Tone from 'tone';
 export class Tab1Page implements OnInit {
 
   ngOnInit(): void {
-
+    console.log('init');
     const synth = new Tone.Synth().toMaster();
-    synth.triggerAttackRelease('C4', '8n');
+    //synth.triggerAttack('C4');
+    const noise = new Tone.Noise('pink').toMaster();
+    noise.start();
+    noise.stop(5);
   }
 
   constructor() {

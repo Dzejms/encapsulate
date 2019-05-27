@@ -1,2 +1,2 @@
-# encapsulation
+# encapsulate
 PWA for enabling deep work
