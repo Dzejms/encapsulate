@@ -7,6 +7,29 @@
 </ion-header>
 
 <ion-content>
+  <ion-list (ionChange)="changeNoiseColor($event)">
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Color</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Pink</ion-label>
+          <ion-radio value="pink" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Brown</ion-label>
+          <ion-radio value="brown"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>White</ion-label>
+          <ion-radio value="white"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
     <ion-button (click)="start()">Start</ion-button>
     <ion-button (click)="stop()">Stop</ion-button>
 </ion-content>

@@ -18,14 +18,19 @@ export class Tab1Page implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('init');
   }
+
   start(): void {
     this.noise.start();
   }
 
   stop(): void {
     this.noise.stop();
+  }
+
+  changeNoiseColor($event) {
+    console.log($event);
+    this.noise.type = $event.detail.value;
   }
 
 }
