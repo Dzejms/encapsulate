@@ -29,7 +29,17 @@
         </ion-item>
       </ion-radio-group>
     </ion-list>
-
-    <ion-button (click)="start()">Start</ion-button>
-    <ion-button (click)="stop()">Stop</ion-button>
+    <ion-list-header>
+      <ion-label>Volume</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="-20" max="0" value="-10" (ionChange)="changeVolume($event)">
+        <ion-icon size="small" slot="start" name="volume-low"></ion-icon>
+        <ion-icon slot="end" name="volume-high"></ion-icon>
+      </ion-range>
+    </ion-item>
+    <div id="transport-controls">
+        <ion-button (click)="start()">Start</ion-button>
+        <ion-button (click)="stop()">Stop</ion-button>
+    </div>
 </ion-content>

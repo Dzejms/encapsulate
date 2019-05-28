@@ -9,6 +9,7 @@ import * as Tone from 'tone';
 export class Tab1Page implements OnInit {
 
   private noise = new Tone.Noise('pink').toMaster();
+  private volume = new Tone.Volume(0).toMaster();
 
   constructor() {
     if (typeof Tone !== 'undefined') {
@@ -17,7 +18,7 @@ export class Tab1Page implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.noise.chain(this.volume, Tone.Master);
   }
 
   start(): void {
@@ -28,9 +29,21 @@ export class Tab1Page implements OnInit {
     this.noise.stop();
   }
 
-  changeNoiseColor($event) {
+  changeNoiseColor($event): void {
     console.log($event);
     this.noise.type = $event.detail.value;
+  }
+
+  changeVolume($event): void {
+    this.setVolume($event.detail.value);
+  }
+
+  muteClick(): void {
+    this.volume.mute = !this.volume.mute;
+  }
+
+  private setVolume(value: number): void {
+    this.noise.volume.value = value;
   }
 
 }
