@@ -39,7 +39,14 @@
       </ion-range>
     </ion-item>
     <div id="transport-controls">
-        <ion-button (click)="start()">Start</ion-button>
-        <ion-button (click)="stop()">Stop</ion-button>
+        <ion-button (click)="start()">
+          <ion-icon slot="icon-only" name="play"></ion-icon>
+        </ion-button>
+        <ion-button (click)="stop()">
+          <ion-icon slot="icon-only" name="square"></ion-icon>
+        </ion-button>
+        <!-- <ion-button (click)="muteClick()">
+          <ion-icon slot="icon-only" name="volume-off"></ion-icon>
+        </ion-button> -->
     </div>
 </ion-content>

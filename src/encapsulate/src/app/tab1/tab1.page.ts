@@ -8,17 +8,16 @@ import * as Tone from 'tone';
 })
 export class Tab1Page implements OnInit {
 
-  private noise = new Tone.Noise('pink').toMaster();
-  private volume = new Tone.Volume(0).toMaster();
+  private noise;
 
   constructor() {
-    if (typeof Tone !== 'undefined') {
-      console.log('tone loc');
-    }
+    this.noise = new Tone.Noise({
+      volume : -10,
+      type : 'pink'
+    }).toMaster();
   }
 
   ngOnInit(): void {
-    this.noise.chain(this.volume, Tone.Master);
   }
 
   start(): void {
@@ -30,7 +29,6 @@ export class Tab1Page implements OnInit {
   }
 
   changeNoiseColor($event): void {
-    console.log($event);
     this.noise.type = $event.detail.value;
   }
 
@@ -39,7 +37,8 @@ export class Tab1Page implements OnInit {
   }
 
   muteClick(): void {
-    this.volume.mute = !this.volume.mute;
+    // todo: I think this should do it, but it has not effect :/
+    this.noise.volume.mute = !this.noise.volume.mute;
   }
 
   private setVolume(value: number): void {
