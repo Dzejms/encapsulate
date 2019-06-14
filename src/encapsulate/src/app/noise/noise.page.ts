@@ -8,9 +8,10 @@ import * as Tone from 'tone';
 })
 export class NoisePage implements OnInit {
 
+  public muteicon: string;
+
   private noise: Tone.Noise;
   private muted: boolean;
-  private muteicon: string;
 
   constructor() {
     this.noise = new Tone.Noise({
