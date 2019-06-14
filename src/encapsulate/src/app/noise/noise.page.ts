@@ -10,26 +10,22 @@ export class NoisePage implements OnInit {
 
   private noise: Tone.Noise;
   private muted: boolean;
-  private mutedVolume: number;
   private muteicon: string;
 
   constructor() {
     this.noise = new Tone.Noise({
-      type : 'pink'
+      type : 'brown'
     });
     this.setVolume(-10);
     this.noise.toMaster();
+    this.noise.start();
   }
 
   ngOnInit(): void {
     this.muteicon = 'volume-off';
   }
 
-  start(): void {
-    this.noise.start();
-  }
-
-  stop(): void {
+  ionTabsWillChange(): void {
     this.noise.stop();
   }
 
@@ -44,11 +40,10 @@ export class NoisePage implements OnInit {
   muteClick(): void {
     this.muted = !this.muted;
     if (this.muted) {
-      this.mutedVolume =  this.noise.volume.value;
+      this.noise.stop();
       this.muteicon = 'volume-high';
-      this.setVolume(-100);
     } else {
-      this.setVolume(this.mutedVolume);
+      this.noise.start();
       this.muteicon = 'volume-off';
     }
   }

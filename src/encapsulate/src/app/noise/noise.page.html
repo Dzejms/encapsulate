@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Noise
+      noise
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,17 +14,17 @@
         </ion-list-header>
 
         <ion-item>
-          <ion-label>Pink</ion-label>
+          <ion-label>pink</ion-label>
           <ion-radio value="pink"></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>Brown</ion-label>
+          <ion-label>brown</ion-label>
           <ion-radio value="brown" checked></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>White</ion-label>
+          <ion-label>white</ion-label>
           <ion-radio value="white"></ion-radio>
         </ion-item>
       </ion-radio-group>
@@ -39,12 +39,6 @@
       </ion-range>
     </ion-item>
     <div id="transport-controls">
-        <ion-button (click)="start()">
-          <ion-icon slot="icon-only" name="play"></ion-icon>
-        </ion-button>
-        <ion-button (click)="stop()">
-          <ion-icon slot="icon-only" name="square"></ion-icon>
-        </ion-button>
         <ion-button (click)="muteClick()">
           <ion-icon slot="icon-only" name="{{muteicon}}"></ion-icon>
         </ion-button>
