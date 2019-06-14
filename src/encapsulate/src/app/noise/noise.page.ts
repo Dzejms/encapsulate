@@ -12,9 +12,10 @@ export class NoisePage implements OnInit {
 
   constructor() {
     this.noise = new Tone.Noise({
-      volume : -10,
       type : 'pink'
-    }).toMaster();
+    });
+    this.setVolume(-10);
+    this.noise.toMaster();
   }
 
   ngOnInit(): void {
