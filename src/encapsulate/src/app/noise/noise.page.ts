@@ -8,7 +8,10 @@ import * as Tone from 'tone';
 })
 export class NoisePage implements OnInit {
 
-  private noise;
+  private noise: Tone.Noise;
+  private muted: boolean;
+  private mutedVolume: number;
+  private muteicon: string;
 
   constructor() {
     this.noise = new Tone.Noise({
@@ -19,6 +22,7 @@ export class NoisePage implements OnInit {
   }
 
   ngOnInit(): void {
+    this.muteicon = 'volume-off';
   }
 
   start(): void {
@@ -38,8 +42,15 @@ export class NoisePage implements OnInit {
   }
 
   muteClick(): void {
-    // todo: I think this should do it, but it has not effect :/
-    this.noise.volume.mute = !this.noise.volume.mute;
+    this.muted = !this.muted;
+    if (this.muted) {
+      this.mutedVolume =  this.noise.volume.value;
+      this.muteicon = 'volume-high';
+      this.setVolume(-100);
+    } else {
+      this.setVolume(this.mutedVolume);
+      this.muteicon = 'volume-off';
+    }
   }
 
   private setVolume(value: number): void {

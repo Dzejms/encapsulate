@@ -15,12 +15,12 @@
 
         <ion-item>
           <ion-label>Pink</ion-label>
-          <ion-radio value="pink" checked></ion-radio>
+          <ion-radio value="pink"></ion-radio>
         </ion-item>
 
         <ion-item>
           <ion-label>Brown</ion-label>
-          <ion-radio value="brown"></ion-radio>
+          <ion-radio value="brown" checked></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -45,8 +45,8 @@
         <ion-button (click)="stop()">
           <ion-icon slot="icon-only" name="square"></ion-icon>
         </ion-button>
-        <!-- <ion-button (click)="muteClick()">
-          <ion-icon slot="icon-only" name="volume-off"></ion-icon>
-        </ion-button> -->
+        <ion-button (click)="muteClick()">
+          <ion-icon slot="icon-only" name="{{muteicon}}"></ion-icon>
+        </ion-button>
     </div>
 </ion-content>
