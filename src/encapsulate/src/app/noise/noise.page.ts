@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import * as Tone from 'tone';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-noise',
+  templateUrl: 'noise.page.html',
+  styleUrls: ['noise.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class NoisePage implements OnInit {
 
   private noise;
 
