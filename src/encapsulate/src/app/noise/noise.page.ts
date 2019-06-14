@@ -19,15 +19,11 @@ export class NoisePage implements OnInit {
     });
     this.setVolume(-10);
     this.noise.toMaster();
-    this.noise.start();
   }
 
   ngOnInit(): void {
+    this.noise.start();
     this.muteicon = 'volume-off';
-  }
-
-  ionTabsWillChange(): void {
-    this.noise.stop();
   }
 
   changeNoiseColor($event): void {
