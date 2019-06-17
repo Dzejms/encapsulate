@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import * as Tone from 'tone';
+import { Component, OnInit } from "@angular/core";
+import * as Tone from "tone";
 
 @Component({
-  selector: 'app-noise',
-  templateUrl: 'noise.page.html',
-  styleUrls: ['noise.page.scss']
+  selector: "app-noise",
+  templateUrl: "noise.page.html",
+  styleUrls: ["noise.page.scss"]
 })
 export class NoisePage implements OnInit {
 
@@ -15,15 +15,15 @@ export class NoisePage implements OnInit {
 
   constructor() {
     this.noise = new Tone.Noise({
-      type : 'brown'
+      type : "brown"
     });
     this.setVolume(-10);
     this.noise.toMaster();
   }
 
   ngOnInit(): void {
-    this.noise.start();
-    this.muteicon = 'volume-off';
+    // this.noise.start();
+    this.muteicon = "volume-off";
   }
 
   changeNoiseColor($event): void {
@@ -38,10 +38,10 @@ export class NoisePage implements OnInit {
     this.muted = !this.muted;
     if (this.muted) {
       this.noise.stop();
-      this.muteicon = 'volume-high';
+      this.muteicon = "volume-high";
     } else {
       this.noise.start();
-      this.muteicon = 'volume-off';
+      this.muteicon = "volume-off";
     }
   }
 
