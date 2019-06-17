@@ -9,9 +9,9 @@ import * as Tone from "tone";
 export class NoisePage implements OnInit {
 
   public muteicon: string;
+  private muted: boolean;
 
   private noise: Tone.Noise;
-  private muted: boolean;
 
   constructor() {
     this.noise = new Tone.Noise({
@@ -22,7 +22,7 @@ export class NoisePage implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.noise.start();
+    this.noise.start();
     this.muteicon = "volume-off";
   }
 

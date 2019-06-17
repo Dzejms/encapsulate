@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      drone
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div id="transport-controls">
+    <ion-button (click)="muteClick()">
+      <ion-icon slot="icon-only" name="{{muteicon}}"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
